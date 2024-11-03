@@ -5,7 +5,7 @@ This module handles fetching & processing operations related to withdrawals from
 
 
 from .withdrawals import (
-    fetch_wthdrawals,
+    fetch_withdrawals,
     process_withdrawals,
 )
 
