@@ -43,7 +43,7 @@ def create_total_params(query_params: dict) -> str:
     return '&'.join([f"{key}={value}" for key, value in query_params.items()])
 
 
-def fetch_wthdrawals(start_time: int, end_time: int) -> list[dict]:
+def fetch_withdrawals(start_time: int, end_time: int) -> list[dict]:
     """Fetch withdrawals for the specified account's API KEY & time range.
     :param start_time: time in milliseconds from which withdrawals are fetched inclusively
     :param end_time: time in milliseconds before which withdrawals are fetched inclusively

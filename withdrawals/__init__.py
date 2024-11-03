@@ -10,6 +10,6 @@ from .withdrawals import (
 )
 
 __all__ = [
-    'fetch_wthdrawals',
+    'fetch_withdrawals',
     'process_withdrawals',
 ]
