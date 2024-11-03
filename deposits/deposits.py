@@ -8,6 +8,9 @@ import logging
 import requests
 import pandas as pd
 
+# Importing helper functions from utils
+from ..utils import convert_millisec_to_datetime, create_total_params
+
 # Cryptographic Libraries for Authentication
 import hashlib
 import hmac
@@ -25,22 +28,6 @@ URL = BASE_URL + ENDPOINT
 # Set up logging
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-
-
-# Helper functions
-def convert_millisec_to_datetime(millisec: int) -> str:
-    """Converts milliseconds to UTC datetime string in 'YYYY-MM-DD HH:MM:SS' format."""
-    return datetime.datetime.fromtimestamp(millisec / 1000.0, tz=datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
-
-
-def convert_datetime_to_millsec(datetime_val: str) -> int:
-    """Converts a UTC datetime string in 'YYYY-MM-DD HH:MM:SS' format to milliseconds."""
-    return int(datetime.datetime.strptime(datetime_val, '%Y-%m-%d %H:%M:%S').replace(tzinfo=datetime.timezone.utc).timestamp() * 1000)
-
-
-def create_total_params(query_params: dict) -> str:
-    """Generate a query string from a dictionary of parameters."""
-    return '&'.join([f"{key}={value}" for key, value in query_params.items()])
 
 
 def fetch_deposits(start_time: int, end_time: int) -> list[dict]:
