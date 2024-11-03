@@ -55,10 +55,10 @@ def fetch_wthdrawals(start_time: int, end_time: int) -> list[dict]:
         'X-MBX-APIKEY': API_KEY
     }
 
-    # Query parameters with start_time, end_time, and timestamp
+    # Query parameters with start_time, end_time (based on 'applyTime' field) and timestamp
     query_params = {
-        'startTime': start_time,
-        'endTime': end_time,
+        'startTime': start_time,  # Filters withdrawals where 'applyTime' >= start_time
+        'endTime': end_time,      # Filters withdrawals where 'applyTime' <= end_time
         'timestamp': int(time.time() * 1000),  # Current timestamp in milliseconds
     }
 
