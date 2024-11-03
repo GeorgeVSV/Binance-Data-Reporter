@@ -9,7 +9,7 @@ import requests
 import pandas as pd
 
 # Importing helper functions from utils
-from ..utils import convert_millisec_to_datetime, create_total_params
+from utils import convert_millisec_to_datetime, create_total_params
 
 # Cryptographic Libraries for Authentication
 import hashlib
