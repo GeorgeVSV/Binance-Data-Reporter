@@ -18,8 +18,8 @@ API_SECRET = os.getenv('API_SECRET')
 API_LOG_NAME = os.getenv('API_LOG_NAME')
 
 # Constants for fetching
-BASE_URL = 'https://api.binance.com'
-ENDPOINT = '/sapi/v1/capital/withdraw/history'
+BASE_URL = os.getenv('BASE_URL')
+ENDPOINT = os.getenv('WITHDRAWAL_HIST_ENPOINT')
 URL = BASE_URL + ENDPOINT
 
 # Set up logging

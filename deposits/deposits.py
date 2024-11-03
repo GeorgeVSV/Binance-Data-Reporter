@@ -18,8 +18,8 @@ API_SECRET = os.getenv('API_SECRET')
 API_LOG_NAME = os.getenv('API_LOG_NAME')
 
 # Constants for fetching
-BASE_URL = 'https://api.binance.com'
-ENDPOINT = '/sapi/v1/capital/deposit/hisrec'
+BASE_URL = os.getenv('BASE_URL')
+ENDPOINT = os.getenv('DEPOSITS_HIST_ENDPOINT')
 URL = BASE_URL + ENDPOINT
 
 # Set up logging
